@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "61a9b4d4-5f44-465d-8f61-d34fdd951903",
+		"name": "walletAppCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1097747"
+	},
+	"item": [
+		{
+			"name": "Create a User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Usman Ikhlaq\",\r\n    \"email\": \"usmanbutt836@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/walletApp/public/api/users",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Funds",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 2.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/walletApp/public/api/wallets/1/deposit",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"wallets",
+						"1",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw Funds",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": 1.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/walletApp/public/api/wallets/1/withdraw",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"wallets",
+						"1",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Funds Between Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender_id\": 1,\r\n    \"receiver_id\": 2,\r\n    \"amount\": 2.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/walletApp/public/api/transactions/transfer",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"transactions",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Transactions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/walletApp/public/api/transactions/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"transactions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details (with balance)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/walletApp/public/api/users/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"walletApp",
+						"public",
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
